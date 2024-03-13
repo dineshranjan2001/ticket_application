@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-config
+data:
+  HOST: "auth-mysqlclusterip-srv"
+  DB_USER: "root"
+  MYSQL_DATABASE: "ticket"
+  PORT: "3306"
+

@@ -1,0 +1,17 @@
+apiVersion: skaffold/v3
+kind: Config
+build:
+  artifacts:
+    - image: dineshranjanbiswal/auth
+      context: ../../auth
+      sync:
+        manual:
+          - dest: .
+            src: 'src/**/*.js'
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false
+manifests:
+  rawYaml:
+    - ../k8s/*
